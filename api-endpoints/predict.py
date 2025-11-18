@@ -49,10 +49,6 @@ def predict_cervical_cancer_risk(input_data_dict: dict) -> dict:
     # Make prediction
     risk_score = float(model.predict(input_transformed)[0])
     
-    # Debug: Print the raw prediction
-    print(f"DEBUG - Raw model prediction: {risk_score}")
-    print(f"DEBUG - Input features: {input_data_dict}")
-    
     # Clip risk score to valid range [0, 1]
     risk_score = np.clip(risk_score, 0.0, 1.0)
     

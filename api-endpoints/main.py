@@ -74,13 +74,10 @@ async def predict(input_data: PredictionInput):
         # Convert Pydantic model to dictionary using aliases (original feature names)
         input_dict = input_data.model_dump(by_alias=True)
         
-        logger.info(f"Received prediction request")
-        logger.info(f"Input data: {input_dict}")
-        
         # Make prediction
         result = predict_cervical_cancer_risk(input_dict)
         
-        logger.info(f"Prediction successful: Risk Level = {result['risk_level']}")
+        logger.info(f"   Prediction successful: Risk Level = {result['risk_level']}")
         
         return PredictionOutput(**result)
     
