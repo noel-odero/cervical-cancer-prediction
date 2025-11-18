@@ -71,10 +71,11 @@ async def predict(input_data: PredictionInput):
         HTTPException: If prediction fails due to invalid input or model errors.
     """
     try:
-        # Convert Pydantic model to dictionary
-        input_dict = input_data.model_dump()
+        # Convert Pydantic model to dictionary using aliases (original feature names)
+        input_dict = input_data.model_dump(by_alias=True)
         
-        logger.info(f"Received prediction request with Age: {input_dict.get('Age')}")
+        logger.info(f"Received prediction request")
+        logger.info(f"Input data: {input_dict}")
         
         # Make prediction
         result = predict_cervical_cancer_risk(input_dict)

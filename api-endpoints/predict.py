@@ -49,17 +49,22 @@ def predict_cervical_cancer_risk(input_data_dict: dict) -> dict:
     # Make prediction
     risk_score = float(model.predict(input_transformed)[0])
     
+    # Debug: Print the raw prediction
+    print(f"DEBUG - Raw model prediction: {risk_score}")
+    print(f"DEBUG - Input features: {input_data_dict}")
+    
     # Clip risk score to valid range [0, 1]
     risk_score = np.clip(risk_score, 0.0, 1.0)
     
     # Interpret risk level based on score
-    if risk_score < 0.2:
+    # Adjusted thresholds based on DecisionTree model output range (0.0 - 0.8)
+    if risk_score < 0.15:
         risk_level = "LOW"
         recommendation = "Routine screening recommended"
-    elif risk_score < 0.5:
+    elif risk_score < 0.4:
         risk_level = "MODERATE"
         recommendation = "Consider additional screening and consultation"
-    elif risk_score < 0.7:
+    elif risk_score < 0.65:
         risk_level = "HIGH"
         recommendation = "Consult healthcare provider soon for evaluation"
     else:
