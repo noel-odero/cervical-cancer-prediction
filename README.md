@@ -4,10 +4,9 @@ Complete end-to-end machine learning system for predicting cervical cancer risk 
 
 ## Project Overview
 
-This project consists of three main components:
+This project consists of two main components:
 1. **Model Training** (Task 1): ML model development and evaluation
 2. **API Backend** (Task 2): FastAPI deployment for predictions
-3. **Web Interface** (Task 3): User-friendly frontend application
 
 ## Dataset
 
@@ -65,4 +64,5 @@ uvicorn main:app --reload
 ## Author
 
 Noel Odero - [GitHub Profile](https://github.com/noel-odero)
+
 
