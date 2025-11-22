@@ -1,0 +1,13 @@
+{
+    "model_name": "example_model",
+    "version": "1.0.0",
+    "parameters": {
+        "learning_rate": 0.01,
+        "batch_size": 32,
+        "num_epochs": 100
+    },
+    "data": {
+        "train_data_path": "/data/train.csv",
+        "validation_data_path": "/data/validation.csv"
+    }
+}
