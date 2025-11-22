@@ -8,6 +8,12 @@ This project consists of two main components:
 1. **Model Training** (Task 1): ML model development and evaluation
 2. **API Backend** (Task 2): FastAPI deployment for predictions
 
+## Problem Statement
+Delayed or inaccessible cervical cancer risk assessment leads to missed early detection and poorer patient outcomes.
+
+## Mission Statement
+Provide a fast, accessible, privacy‑respecting Flutter app that uses a validated prediction API to deliver actionable cervical cancer risk scores and screening recommendations.
+
 ## Dataset
 
 - **Source**: [Kaggle](https://www.kaggle.com/datasets/loveall/cervical-cancer-risk-classification)
@@ -64,6 +70,7 @@ uvicorn main:app --reload
 ## Author
 
 Noel Odero - [GitHub Profile](https://github.com/noel-odero)
+
 
 
 
