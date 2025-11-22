@@ -1,6 +1,5 @@
-"""
-Prediction logic for cervical cancer risk assessment.
-This module contains the prediction function extracted from the trained model.
+"""Prediction logic for cervical cancer risk assessment using the current
+LinearRegression model trained on 10 VIF-selected features.
 """
 import joblib
 import pandas as pd
@@ -52,20 +51,21 @@ def predict_cervical_cancer_risk(input_data_dict: dict) -> dict:
     # Clip risk score to valid range [0, 1]
     risk_score = np.clip(risk_score, 0.0, 1.0)
     
-    # Interpret risk level based on score
-    # Adjusted thresholds based on DecisionTree model output range (0.0 - 0.8)
-    if risk_score < 0.15:
+    # Interpret risk level based on LinearRegression score distribution
+    # Narrow range thresholds chosen empirically:
+    # <0.06 LOW, <0.12 MODERATE, <0.16 HIGH, >=0.16 VERY HIGH
+    if risk_score < 0.06:
         risk_level = "LOW"
         recommendation = "Routine screening recommended"
-    elif risk_score < 0.4:
+    elif risk_score < 0.12:
         risk_level = "MODERATE"
         recommendation = "Consider additional screening and consultation"
-    elif risk_score < 0.65:
+    elif risk_score < 0.16:
         risk_level = "HIGH"
-        recommendation = "Consult healthcare provider soon for evaluation"
+        recommendation = "Consult healthcare provider for evaluation"
     else:
         risk_level = "VERY HIGH"
-        recommendation = "Immediate medical intervention required"
+        recommendation = "Prioritize immediate follow-up with a specialist"
     
     return {
         "risk_score": risk_score,

@@ -16,8 +16,11 @@ logger = logging.getLogger(__name__)
 # Initialize FastAPI app
 app = FastAPI(
     title="Cervical Cancer Risk Prediction API",
-    description="API for predicting cervical cancer risk using machine learning models",
-    version="1.0.0",
+    description=(
+        "Predict cervical cancer risk using a LinearRegression model trained on 10 "
+        "behavioral and STD-related features (VIF-selected)."
+    ),
+    version="1.1.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
@@ -39,7 +42,20 @@ async def root():
     """
     return {
         "message": "Welcome to Cervical Cancer Risk Prediction API",
-        "version": "1.0.0",
+        "version": "1.1.0",
+        "model": "LinearRegression",
+        "features": [
+            "Number of sexual partners",
+            "First sexual intercourse",
+            "Smokes",
+            "Hormonal Contraceptives",
+            "IUD (years)",
+            "STDs",
+            "STDs (number)",
+            "STDs:cervical condylomatosis",
+            "STDs:pelvic inflammatory disease",
+            "STDs:genital herpes"
+        ],
         "docs": "/docs",
         "health": "/health"
     }
