@@ -48,21 +48,22 @@ uvicorn main:app --reload
 
 - **ML**: Python, scikit-learn, pandas, numpy
 - **API**: FastAPI, Pydantic, Uvicorn
-- **Deployment**: Render (API), Netlify/Vercel (Frontend)
+- **Deployment**: Render (API)
 
 ## Model Performance
 
 | Model | RMSE | R² Score |
 |-------|------|----------|
-| Linear Regression | 0.2025 | 0.654 |
-| SGD Regressor | 0.2018 | 0.658 |
-| Decision Tree | 0.1876 | 0.712 |
-| Random Forest | 0.1923 | 0.695 |
+| Linear Regression | 0.230038 | -0.004152 |
+| Random Forest | 0.244282 | -0.132359 |
+| Decision Tree | 0.308643 | -0.807647 |
 
-**Best Model**: Decision Tree (RMSE: 0.1876)
+
+**Best Model**: Linear Regression (RMSE: 0.230038)
 
 ## Author
 
 Noel Odero - [GitHub Profile](https://github.com/noel-odero)
+
 
 
