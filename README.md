@@ -21,6 +21,12 @@ Provide a fast, accessible, privacy‑respecting Flutter app that uses a validat
 - **Target**: Cervical cancer risk score (0-1 continuous value)
 - **Samples**: 858 patients
 
+## Mobile app 
+- [Link to the frontend Repo](https://github.com/noel-odero/cervical-cancer-prediction-frontend)
+- [Link to the deployed frontend](https://cervical-cancer-predictt.netlify.app/)
+- [Link to the demo video](https://www.loom.com/share/248b46762cd14e46a1f13d700775bb97)
+
+
 ## Quick Start
 
 ### 1. Model Training
@@ -70,6 +76,7 @@ uvicorn main:app --reload
 ## Author
 
 Noel Odero - [GitHub Profile](https://github.com/noel-odero)
+
 
 
 
